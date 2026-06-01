@@ -2,11 +2,11 @@
 
 ## Author
 
-* **Name**:  R.Mohamed Rafi
-* **Register Number**: 212224040195
-* **Date of Submission**: 18/05/2026
 
----
+* **Name**: SHIVAA PALANIYAPPAN V
+* **Register Number**: 212223110050
+* **Date of Submission**: 25.04.2026
+
 
 ## Objective
 
@@ -84,39 +84,165 @@ Install and start a web server (Apache HTTPD) on the EC2 instance using user dat
 Create a simple HTML page and verify that it can be accessed from a web browser using the public IP address of the instance.---
 
 ## Workflow (Student Explanation)
-1.I started the lab and logged into the Amazon Web Services Management Console in the N. Virginia (us-east-1) region.
 
-2.I created a custom VPC using Amazon VPC, configured public and private subnets, and enabled an Internet Gateway and NAT Gateway to manage internet connectivity.
+(Write the steps you followed in your own words)
 
-3.I added additional public and private subnets in a second Availability Zone and updated the route tables to ensure proper routing for both internet-facing and private traffic.
+#### Task 1: Creating a VPC
 
-4.I created a Security Group named Web Security Group and configured it to allow HTTP (port 80) access from anywhere to enable web traffic.
+* I logged in to Amazon Web Services Management Console.
 
-5.I launched an EC2 instance using Amazon EC2 in the public subnet, enabled auto-assign public IP, attached the security group, and selected the required key pair.
+* I searched for VPC in the Services search bar and opened the VPC Dashboard.
 
-6.I configured a user data script to automatically install Apache and deploy a web application, then verified the web server by accessing the instance’s public DNS in a browser.
+* I verified that the region was set to N. Virginia (us-east-1).
 
----
+* I clicked on Create VPC and selected VPC and more option.
+
+* I kept the IPv4 CIDR block as 10.0.0.0/16.
+
+* I selected:
+
+1 Availability Zone
+
+1 Public Subnet
+
+1 Private Subnet
+
+* I customized subnet CIDR blocks:
+
+Public subnet: 10.0.0.0/24
+
+Private subnet: 10.0.1.0/24
+
+* I selected 1 NAT Gateway in 1 AZ.
+
+* I kept DNS Hostnames and DNS Resolution enabled.
+
+* I clicked Create VPC and waited until all resources were created successfully.
+
+This created:
+
+VPC
+
+Internet Gateway
+
+NAT Gateway
+
+Public and Private Subnets
+
+Route Tables
+
+#### Task 2: Creating Additional Subnets
+
+* In the VPC console, I selected Subnets.
+
+* I created a second public subnet:
+
+Name: lab-subnet-public2
+
+AZ: us-east-1b
+
+CIDR: 10.0.2.0/24
+
+* I created a second private subnet:
+
+Name: lab-subnet-private2
+
+AZ: us-east-1b
+
+CIDR: 10.0.3.0/24
+
+* I went to Route Tables.
+
+* I selected the private route table and associated it with the second private subnet.
+
+* I selected the public route table and associated it with the second public subnet.
+
+Now the VPC had public and private subnets in two Availability Zones.
+
+#### Task 3: Creating a Security Group
+
+In the VPC console, I selected Security Groups.
+
+* I clicked Create Security Group.
+
+* I entered:
+
+Name: Web Security Group
+
+Description: Enable HTTP access
+
+VPC: lab-vpc
+
+* I added an inbound rule:
+
+Type: HTTP
+
+Source: Anywhere (0.0.0.0/0)
+
+* I created the security group.
+
+This security group allows web traffic to the instance.
+
+#### Task 4: Launching an EC2 Web Server
+
+* I searched for and opened Amazon Elastic Compute Cloud (EC2).
+
+* I clicked Launch Instance.
+
+* I entered the instance name as Web Server 1.
+
+* I selected:
+
+Amazon Linux 2023 AMI
+
+Instance type: t2.micro
+
+* I selected the key pair: vockey.
+
+Under Network settings:
+
+VPC: lab-vpc
+
+Subnet: lab-subnet-public2
+
+Auto-assign Public IP: Enabled
+
+* I selected the existing security group: Web Security Group.
+
+* In Advanced details, I added the user data script to install Apache and deploy the web application.
+
+* I launched the instance.
+
+After the instance status showed 2/2 checks passed, I copied the Public IPv4 DNS and opened it in a browser.
+
+* The web page displaying AWS logo and instance details was successfully loaded.
 
 ## Output Screenshots (Attach 3)
 
 ### Screenshot 1: VPC and Subnet Details
+<img width="1899" height="995" alt="Screenshot 2026-02-12 120924" src="https://github.com/user-attachments/assets/e1ce5c69-bb3f-40bb-9f09-0a379423bad7" />
 
-<img width="1919" height="1025" alt="Screenshot 2026-04-18 112646" src="https://github.com/user-attachments/assets/d9d44f57-0ac7-4201-b9df-24de9831b2de" />
+<img width="1895" height="992" alt="Screenshot 2026-02-12 121331" src="https://github.com/user-attachments/assets/07d3e812-66f1-47b0-9e5f-e3b8147eee29" />
 
-``
+<img width="1897" height="1002" alt="Screenshot 2026-02-12 121830" src="https://github.com/user-attachments/assets/474814ff-e331-4cca-9ad5-15c2c458a70c" />
+
+<img width="1896" height="991" alt="Screenshot 2026-02-12 122005" src="https://github.com/user-attachments/assets/ddca932c-49c6-4f42-82af-b422697f816f" />
+
 
 ### Screenshot 2: EC2 Instance Running
 
-<img width="1919" height="1028" alt="Screenshot 2026-04-18 112818" src="https://github.com/user-attachments/assets/7e0beb07-0ba0-4d6a-a78e-e390ffc64a70" />
+<img width="1919" height="990" alt="Screenshot 2026-02-12 104652" src="https://github.com/user-attachments/assets/c705c1ee-d282-47f8-bc24-016e05c67504" />
 
----
+
+
+
 
 ### Screenshot 3: Web Server Output in Browser
 
-<img width="1919" height="1072" alt="Screenshot 2026-04-18 113720" src="https://github.com/user-attachments/assets/78397c8f-327c-4958-ac33-5ba456eb91a2" />
 
----
+<img width="1725" height="965" alt="Screenshot 2026-02-13 094800" src="https://github.com/user-attachments/assets/77146927-fbd7-41b5-81bc-cc8821629f6f" />
+
 
 ## Result 
+
 This experiment successfully demonstrated the creation of a custom VPC and deployment of a public-facing web server in AWS. By configuring networking components such as subnets, route tables, and security groups, and by launching an EC2 instance with a web server, the basic architecture of a cloud-hosted application was understood.
