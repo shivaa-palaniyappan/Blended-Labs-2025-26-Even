@@ -1,16 +1,15 @@
 # Lab 6 – Scale and Load Balance Your Architecture
+
+## Title
+
+Scale and Load Balance Your Architecture
+---
 ## Author
 
 
 * **Name**: SHIVAA PALANIYAPPAN V
 * **Register Number**: 212223110050
-* **Date of Submission**: 23.04.2026
-
-## Title
-
-Scale and Load Balance Your Architecture
-Author : your name   Reg no : yours   Date :
-
+* **Date of Submission**: 23.05.2026
 ---
 
 ## Objective
@@ -72,46 +71,26 @@ Students test the setup by generating traffic and observing automatic scaling an
 
 ## Workflow (To be filled by Student)
 
-1. Describe step-by-step how you performed this experiment in your own words.
 
-2. Logged into AWS and reviewed existing EC2 setup.
+1.Launched a new EC2 instance named Web Server in the N. Virginia region using Amazon Linux 2023 AMI and t2.micro instance type.
 
-3. Created a launch template with AMI, instance type, security group, and user data.
+2.Enabled termination protection and stop protection, configured a security group, and added a user data script to install and start an Apache web server.
 
-4. Created an Auto Scaling Group with min, max, and desired capacity.
+3.Monitored the instance using status checks, CloudWatch metrics, and system logs to ensure it was running properly.
 
-5. Set up an Application Load Balancer and target group.
+4.Modified the security group to allow HTTP (port 80) traffic and accessed the web server using the public IP address.
 
-6. Attached the Auto Scaling Group to the load balancer.
+5.Resized the instance to t2.small, increased the EBS volume size, explored EC2 service quotas, tested stop protection, and finally stopped the instance.
 
-7. Configured scaling policies using CloudWatch (CPU-based).
-
-8. Tested by generating traffic and observed load balancing and auto scaling.
-
-9. Verified fault tolerance by stopping an instance and checking automatic replacement.
-    
----
 
 ## Output Screenshots 
 
-<img width="1920" height="1200" alt="Screenshot (263)" src="https://github.com/user-attachments/assets/cfbbd37f-0f5a-46bf-9447-d6775bdba0e1" />
-
-<img width="1920" height="1200" alt="Screenshot (265)" src="https://github.com/user-attachments/assets/50012f05-875c-45f7-a225-0a993f5fc903" />
-
-<img width="1920" height="1200" alt="Screenshot (266)" src="https://github.com/user-attachments/assets/0ee52a85-f32a-466d-8548-77e196b73d37" />
-
-<img width="1920" height="1200" alt="Screenshot (267)" src="https://github.com/user-attachments/assets/16c97545-aac4-43e1-a923-b52df99973b3" />
-
-<img width="1920" height="1200" alt="Screenshot (268)" src="https://github.com/user-attachments/assets/7b043671-c491-49fc-885d-1bbd1294fc56" />
-
-<img width="1920" height="1200" alt="Screenshot (272)" src="https://github.com/user-attachments/assets/dfbd67ec-ebd8-462c-82c8-edb805492d61" />
-
-<img width="1920" height="1200" alt="Screenshot (274)" src="https://github.com/user-attachments/assets/c99218fb-0d9e-45ec-b68b-752e0c2a0327" />
-
-<img width="1920" height="1200" alt="Screenshot (275)" src="https://github.com/user-attachments/assets/0678275d-d7ed-4b33-85d3-a93d78a8474f" />
+<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/5da8ce5e-fe5c-4ee9-bf9d-fcda95b8965e" />
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/b8a77390-7e2a-45fa-92eb-742ddda5bc2a" />
+<img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/d430dbb2-7174-4f37-95c4-eeed58cb1146" />
+<img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/97577215-001c-4145-b504-aea11428067a" />
 
 
----
 
 
 ## Result
