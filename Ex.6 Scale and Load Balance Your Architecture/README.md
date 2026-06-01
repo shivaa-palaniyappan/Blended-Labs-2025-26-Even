@@ -1,4 +1,10 @@
 # Lab 6 – Scale and Load Balance Your Architecture
+## Author
+
+
+* **Name**: SHIVAA PALANIYAPPAN V
+* **Register Number**: 212223110050
+* **Date of Submission**: 23.04.2026
 
 ## Title
 
@@ -66,11 +72,43 @@ Students test the setup by generating traffic and observing automatic scaling an
 
 ## Workflow (To be filled by Student)
 
-Describe step-by-step how you performed this experiment in your own words.
+1. Describe step-by-step how you performed this experiment in your own words.
 
+2. Logged into AWS and reviewed existing EC2 setup.
+
+3. Created a launch template with AMI, instance type, security group, and user data.
+
+4. Created an Auto Scaling Group with min, max, and desired capacity.
+
+5. Set up an Application Load Balancer and target group.
+
+6. Attached the Auto Scaling Group to the load balancer.
+
+7. Configured scaling policies using CloudWatch (CPU-based).
+
+8. Tested by generating traffic and observed load balancing and auto scaling.
+
+9. Verified fault tolerance by stopping an instance and checking automatic replacement.
+    
 ---
 
 ## Output Screenshots 
+
+<img width="1920" height="1200" alt="Screenshot (263)" src="https://github.com/user-attachments/assets/cfbbd37f-0f5a-46bf-9447-d6775bdba0e1" />
+
+<img width="1920" height="1200" alt="Screenshot (265)" src="https://github.com/user-attachments/assets/50012f05-875c-45f7-a225-0a993f5fc903" />
+
+<img width="1920" height="1200" alt="Screenshot (266)" src="https://github.com/user-attachments/assets/0ee52a85-f32a-466d-8548-77e196b73d37" />
+
+<img width="1920" height="1200" alt="Screenshot (267)" src="https://github.com/user-attachments/assets/16c97545-aac4-43e1-a923-b52df99973b3" />
+
+<img width="1920" height="1200" alt="Screenshot (268)" src="https://github.com/user-attachments/assets/7b043671-c491-49fc-885d-1bbd1294fc56" />
+
+<img width="1920" height="1200" alt="Screenshot (272)" src="https://github.com/user-attachments/assets/dfbd67ec-ebd8-462c-82c8-edb805492d61" />
+
+<img width="1920" height="1200" alt="Screenshot (274)" src="https://github.com/user-attachments/assets/c99218fb-0d9e-45ec-b68b-752e0c2a0327" />
+
+<img width="1920" height="1200" alt="Screenshot (275)" src="https://github.com/user-attachments/assets/0678275d-d7ed-4b33-85d3-a93d78a8474f" />
 
 
 ---
