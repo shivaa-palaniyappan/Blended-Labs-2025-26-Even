@@ -2,10 +2,10 @@
 
 ## Author
 
-* **Name**:  R.Mohamed Rafi
-* **Register Number**: 212224040195
-* **Date of Submission**: 18-05-2026
 
+* **Name**: SHIVAA PALANIYAPPAN V
+* **Register Number**: 212223110050
+* **Date of Submission**: 25.04.2026
 ---
 
 ## Objective
@@ -82,37 +82,51 @@ Test the database server by connecting to it locally or remotely and performing 
 
 ## Workflow (Student Explanation)
 
+(Write the steps you followed in your own words)
 
-1. First, a security group named DB Security Group was created to allow the web server to connect to the database using port 3306 (MySQL).
-2. A DB Subnet Group was created with subnets from two Availability Zones to allow the database to run in a Multi-AZ environment for high availability.
-3. A MySQL RDS instance named lab-db was created with the database name lab, username main, and password lab-password.
-4. The database was associated with the DB Security Group and the Lab VPC so that the web server can securely connect to the database.
-5. The web application running on the EC2 server was opened using its IP address, and the RDS endpoint, database name, username, and password were entered to interact with the database.
+1. Logged in to AWS Management Console and opened Amazon EC2.
 
----
+2. Launched a new EC2 instance using Amazon Linux 2 AMI and selected an appropriate instance type.
+
+3. Created/selected a key pair and configured a security group for the instance.
+
+4. Modified the security group to allow SSH (Port 22) and database access (3306 for MySQL or 5432 for PostgreSQL).
+
+5. Connected to the EC2 instance using an SSH client such as PuTTY or terminal.
+
+6.Installed the database server (e.g., MySQL, MariaDB, or PostgreSQL) using Linux package manager commands.
+
+7. Started the database service and configured basic settings such as the root password and user privileges.
+
+8. Created a sample database and table and inserted a few records.
+
+9. Tested database connectivity by running basic SQL queries.
+ 
+
 
 ## Output Screenshots (Attach 3)
 
 ### Screenshot 1: EC2 Instance for Database Server
 
-<img width="1919" height="1032" alt="Screenshot 2026-04-18 140551" src="https://github.com/user-attachments/assets/d5090f7f-6771-4537-8a19-748942e72500" />
+<img width="1919" height="1069" alt="Screenshot 2026-03-08 150312" src="https://github.com/user-attachments/assets/e433954b-0362-4d1b-b650-bd7aff1bdd34" />
 
+<img width="1919" height="1068" alt="Screenshot 2026-03-08 150723" src="https://github.com/user-attachments/assets/93b2d716-5aa7-4746-b02d-eba40562f4f5" />
 
 ---
 
 ### Screenshot 2: Database Service Running
 
-<img width="1242" height="560" alt="image" src="https://github.com/user-attachments/assets/5378af09-8be7-49a5-a7af-ecdc35dbb4f2" />
+<img width="1919" height="1070" alt="Screenshot 2026-03-08 152649" src="https://github.com/user-attachments/assets/c6b28a0d-8181-4d54-9fef-6a077a9ec673" />
 
----
+
+<img width="1920" height="1200" alt="Screenshot (255)" src="https://github.com/user-attachments/assets/2deddce9-5f36-4693-a445-13b13d57c99c" />
+
 
 ### Screenshot 3: Sample Database and Table
 
-<img width="1919" height="1079" alt="Screenshot 2026-04-18 142512" src="https://github.com/user-attachments/assets/1239379a-226e-40c2-bdfb-846d14c650a8" />
+<img width="1920" height="1200" alt="Screenshot (259)" src="https://github.com/user-attachments/assets/23a47c8c-17e7-46c6-9201-ba43df096b07" />
 
-
----
 
 ## Result
 
-This experiment demonstrated how to build a database server in AWS using an EC2 instance. By installing and configuring a DBMS, creating a sample database, and testing connectivity, the fundamentals of hosting and managing a cloud-based database server were understood.
+This experiment demonstrated how to build a database server in AWS using an EC2 instance. By installing and configuring a DBMS, creating a sample database, and testing connectivity, the fundamentals of hosting and managing a cloud-based database server were underst
