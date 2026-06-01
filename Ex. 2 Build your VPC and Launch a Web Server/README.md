@@ -1,4 +1,4 @@
-# Build Your VPC and Launch a Web Server (AWS) 
+# Lab 2 – Build Your VPC and Launch a Web Server (AWS) 
 
 ## Author
 
