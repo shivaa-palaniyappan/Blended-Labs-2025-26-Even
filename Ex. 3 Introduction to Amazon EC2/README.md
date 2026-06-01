@@ -2,10 +2,10 @@
 
 ## Author
 
-* **Name**: R.Moohamed Rafi
-* **Register Number**: 212224040195
-* **Date of Submission**:18/05/2026
 
+* **Name**: SHIVAA PALANIYAPPAN V
+* **Register Number**: 212223110050
+* **Date of Submission**: 02.05.2026
 ---
 
 ## Objective
@@ -96,34 +96,43 @@ Terminate the EC2 instance after completing the experiment to avoid unnecessary 
 
 ## Workflow (Student Explanation)
 
-1.Launched a new EC2 instance named Web Server in the N. Virginia region using Amazon Linux 2023 AMI and t2.micro instance type.
-2.Enabled termination protection and stop protection, configured a security group, and added a user data script to install and start an Apache web server.
-3.Monitored the instance using status checks, CloudWatch metrics, and system logs to ensure it was running properly.
-4.Modified the security group to allow HTTP (port 80) traffic and accessed the web server using the public IP address.
-5.Resized the instance to t2.small, increased the EBS volume size, explored EC2 service quotas, tested stop protection, and finally stopped the instance.
+(Write the steps you followed in your own words)
 
----
+First, I opened the AWS Management Console and selected the EC2 service in the N. Virginia (us-east-1) region. I launched a new instance and named it Web Server.
+
+I selected the default Amazon Linux 2023 AMI and kept the instance type as t2.micro. I chose the existing key pair vockey.
+
+In the network settings, I selected Lab VPC and kept PublicSubnet1. I created a new security group named Web Server security group and removed the default inbound rule.
+
+In Advanced details, I enabled termination protection and added the User Data script to install and start the Apache web server and create a simple HTML page.
+
+After launching the instance, I waited until it showed Running and 2/2 status checks passed.
+
+Next, I monitored the instance using the Status checks, Monitoring tab, System log, and Instance screenshot options.
+
+When I tried accessing the web server using the public IP address, it did not load because HTTP traffic was not allowed. So, I edited the security group and added an HTTP (port 80) inbound rule with source Anywhere-IPv4. After refreshing the browser, the message “Hello From Your Web Server!” appeared.
+
+Then, I stopped the instance and changed the instance type from t2.micro to t2.small. I also enabled stop protection and increased the EBS volume size from 8 GiB to 10 GiB. After that, I started the instance again.
+
+I explored EC2 Service Quotas to check instance limits.
+
+Finally, I tested stop protection by trying to stop the instance. It failed because stop protection was enabled. I disabled stop protection and successfully stopped the instance.
 
 ## Output Screenshots (Attach 3)
 
 ### Screenshot 1: EC2 Dashboard / Instance List
 
-<img width="1919" height="890" alt="Screenshot 2026-04-18 130044" src="https://github.com/user-attachments/assets/68dee634-df4a-4be0-94f0-78595a5ff1cd" />
+<img width="863" height="473" alt="image" src="https://github.com/user-attachments/assets/7eb2b7f7-8a1a-4462-870a-b4ac11ee0356" />
 
-
----
 
 ### Screenshot 2: SSH Connection to Instance
 
-<img width="1919" height="1079" alt="Screenshot 2026-04-18 130809" src="https://github.com/user-attachments/assets/bef28c31-f59a-4950-b331-165e7118c14d" />
+<img width="857" height="478" alt="image" src="https://github.com/user-attachments/assets/8fb83436-0948-4abd-b4c8-b72cc961fa16" />
 
----
 
 ### Screenshot 3: Instance Monitoring / Status
 
-<img width="1918" height="1025" alt="Screenshot 2026-04-18 130925" src="https://github.com/user-attachments/assets/605d70d2-5e0a-43f5-ab74-d0475b33fe3e" />
-
----
+<img width="867" height="471" alt="image" src="https://github.com/user-attachments/assets/78d61a08-5e98-40c0-9d0b-d63dabd0bb33" />
 
 ## Result 
 
